@@ -1,0 +1,48 @@
+---
+title: "Generación de Reportes con Quarto"
+author: "Pablo López Landeros"
+format: html
+editor: visual
+---
+
+# Introducción
+![](Resources/quarto.png){fig-align="left"}
+
+## ¿Qué es Quarto?
+Quarto es un documento que utiliza el "lenguaje" *Markdown* y nos permite combinar
+
+- Códigos en R, Python o Julia
+- Elementos gráficos (tablas, gráficas, resúmenes de modelos)
+- Texto y ecuaciones
+En un solo lugar.
+
+## ¿Por qué usarlo? 
+- Nos ahorra los problemas de formato de los procesadores de texto clásicos.
+- Podemos usar resultados obtenidos con R dentro del mismo documento.
+- Ayuda a que nuestros resultados sean reproducibles.
+- Los reportes son mucho más "automatizables".
+
+Finalmente. Quarto nos permite generar archivos HTML, PDFs o documentos en Word.
+
+La documentación completa está en: <https://quarto.org>.
+
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+You can add options to executable code like this
+
+```{r}
+#| echo: false
+2 * 2
+```
+
+The `echo: false` option disables the printing of code (only output is displayed).
+
+
+
