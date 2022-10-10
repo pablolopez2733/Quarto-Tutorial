@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Pablo López Landeros">
 
-<title>Generación de Reportes con Quarto</title>
+<title>gcion_rep</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,16 +81,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
-<script src="Introduccion_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Introduccion_files/libs/quarto-html/quarto.js"></script>
-<script src="Introduccion_files/libs/quarto-html/popper.min.js"></script>
-<script src="Introduccion_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="Introduccion_files/libs/quarto-html/anchor.min.js"></script>
-<link href="Introduccion_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Introduccion_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="Introduccion_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="Introduccion_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="Introduccion_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="Gcion_rep_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Gcion_rep_files/libs/quarto-html/quarto.js"></script>
+<script src="Gcion_rep_files/libs/quarto-html/popper.min.js"></script>
+<script src="Gcion_rep_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Gcion_rep_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Gcion_rep_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Gcion_rep_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Gcion_rep_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Gcion_rep_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Gcion_rep_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -102,65 +101,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Generación de Reportes con Quarto</h1>
-</div>
 
 
-
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Pablo López Landeros </p>
-          </div>
-  </div>
-    
-    
-  </div>
-  
-
-</header>
-
-<div class="quarto-figure quarto-figure-left">
-<figure class="figure">
-<p><img src="Resources/quarto.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-<section id="qué-es-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="qué-es-quarto">¿Qué es Quarto?</h2>
-<p>Quarto es un documento que utiliza el “lenguaje” <em>Markdown</em> y nos permite combinar</p>
+<section id="generación-de-reportes-en-quarto." class="level1">
+<h1>Generación de Reportes en Quarto.</h1>
+<p>Como ya vimos, Quarto provee una interfaz para generar reportes mediante el uso de texto y código. Consiste de tres tipos de archivo:</p>
 <ul>
-<li>Códigos en R, Python o Julia</li>
-<li>Elementos gráficos (tablas, gráficas, resúmenes de modelos)</li>
-<li>Texto y ecuaciones En un solo lugar.</li>
+<li>Texto (Markdown)</li>
+<li>Chunks o pedazos de código (R, Python o SQL)</li>
+<li>YAML metadata (opciones de generación)</li>
 </ul>
-</section>
-<section id="por-qué-usarlo" class="level2">
-<h2 class="anchored" data-anchor-id="por-qué-usarlo">¿Por qué usarlo?</h2>
-<ul>
-<li>Nos ahorra los problemas de formato de los procesadores de texto clásicos.</li>
-<li>Podemos usar resultados obtenidos con R dentro del mismo documento.</li>
-<li>Ayuda a que nuestros resultados sean reproducibles.</li>
-<li>Los reportes son mucho más “automatizables”.</li>
-</ul>
-<p>Finalmente. Quarto nos permite generar archivos HTML, PDFs o documentos en Word.</p>
-<p>La documentación completa está en: <a href="https://quarto.org" class="uri">https://quarto.org</a>.</p>
-</section>
-<section id="markdown" class="level2">
-<h2 class="anchored" data-anchor-id="markdown">Markdown</h2>
+<section id="crash-course-de-markdown" class="level2">
+<h2 class="anchored" data-anchor-id="crash-course-de-markdown">Crash Course de Markdown</h2>
+<p>╭(◔ ◡ ◔)/.</p>
 <p>Markdown es una forma de escribir contenido mediante <strong>plaintext</strong>. A diferencia de los procesadores tradicionales de texto, los archivos en Markdown tienen la ventaja de poder ser compartidos e interpretados fácilmente entre distintas sistemas operativos como macOS, Windows, Linux, iOS e incluso Android.</p>
-<p>La mejor guía de Markdown se encuentra <a href="https://www.markdownguide.org/basic-syntax/">aquí</a>. ╭(◔ ◡ ◔)/.</p>
-<section id="crash-course" class="level3">
-<h3 class="anchored">Crash Course</h3>
+<p>La mejor guía-resumen de Markdown se encuentra <a href="https://www.markdownguide.org/basic-syntax/">aquí</a>.</p>
+<p>La documentación completa para R Markdown (ahora Quarto). Se encuentra <a href="https://rmarkdown.rstudio.com/lesson-1.html">aquí</a>.</p>
 <ul>
 <li>Títulos y subtítulos: Deberás ocupar el símbolo <em>hash #</em>, dependiendo del número de <em>hashes</em> que pongas el header se irá haciendo más pequeño. Por ejemplo: <code>### Algo aquí</code></li>
 </ul>
 <blockquote class="blockquote">
 <h1 id="un-hash">Un hash</h1>
-<h2 id="dos-hashes" class="anchored" data-anchor-id="crash-course">Dos Hashes</h2>
+<h2 id="dos-hashes" class="anchored">Dos Hashes</h2>
 <h3 id="tres-hashes" class="anchored">Tres Hashes</h3>
 <h4 id="cuatro-hashes" class="anchored">Cuatro Hashes</h4>
 </blockquote>
@@ -201,7 +163,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Que se verá así:</p>
 <p><img src="Resources/tabla_markdown_ejemplo.png" class="img-fluid"> <br></p>
 </section>
-</section>
 <section id="como-combinar-código-markdown" class="level2">
 <h2 class="anchored" data-anchor-id="como-combinar-código-markdown">Como combinar código + Markdown?</h2>
 <p>Ya vimos la parte de la escritura. Ahora veamos como podemos combinar lo aprendido en la sección pasada con lo que vimos la semana pasada (<code>R</code>).</p>
@@ -216,7 +177,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>Warning: Removed 1 rows containing non-finite values (stat_bin).</code></pre>
 </div>
 <div class="cell-output-display">
-<p><img src="Introduccion_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
+<p><img src="Gcion_rep_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <ul>
@@ -246,7 +207,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>()<span class="sc">+</span></span>
 <span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_light</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="Introduccion_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
+<p><img src="Gcion_rep_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <ul>
@@ -279,19 +240,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Introduccion_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="Gcion_rep_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 <p></p><figcaption class="figure-caption">Una bonita gráfica generada con ggplot :D</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p>You can add options to executable code like this</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
-</div>
-</div>
-<p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
+</section>
 </section>
 
 </main>
