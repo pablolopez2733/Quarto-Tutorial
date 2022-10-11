@@ -4,8 +4,8 @@ Notas y códigos sobre tutorial de Quarto para el [curso de R](https://rodrigoze
 ## Índice:
 0. [Introducción](https://pablolopez2733.github.io/Quarto-Tutorial/Introduccion.html)
 1. [Instalación](https://pablolopez2733.github.io/Quarto-Tutorial/Instalacion.html)
-2. [Generación de Reportes](https://pablolopez2733.github.io/Quarto-Tutorial/Gcion_rep.html)
-3. [Ejercicio para practicar](https://pablolopez2733.github.io/Quarto-Tutorial/Ejercicio.html)
+2. [Generación de Reportes con Quarto](https://pablolopez2733.github.io/Quarto-Tutorial/Gcion_rep.html)
+3. [Reporte COVID en México](https://pablolopez2733.github.io/Quarto-Tutorial/Reporte1.html)
 
 
 ## Contacto

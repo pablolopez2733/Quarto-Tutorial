@@ -1,18 +1,90 @@
+---
+title: "Tutorial de `Quarto`"
+subtitle: "Generación de reportes "
+author: "Pablo López Landeros"
+date: "`r Sys.Date()`"
+abstract: "Mostramos la manera de combinar código y texto en un reporte. Además, se incluye un resumen muy conciso sobre `Markdown`."
+title-block-banner: false
+execute:
+  error: true
+  warning: false
+theme: lux  
+toc-title: "Contenido"
+author-title: "Autores"
+published-title: "Última actualización"
+abstract-title: "Resumen"
+backgroundcolor: "#eee9e5"
+format:
+    html: 
+      self-contained: true
+      theme: litera
+      toc: true
+      toc-location: left
+      toc-depth: 3
+      number-sections: true
+      number-depth: 3
+reference-location: margin
+citation-location: margin
+link-citations: yes
+editor: 
+  markdown: 
+    wrap: 80
+---
+
+
 # Generación de Reportes en Quarto.
 Como ya vimos, Quarto provee una interfaz para generar reportes mediante el uso de texto y código. Consiste de tres tipos de archivo: 
 
-+ Texto (Markdown)
-+ Chunks o pedazos de código (R, Python o SQL)
-+ YAML metadata (opciones de generación)
+1. YAML metadata (opciones de generación)
+2. Texto (Markdown)
+3. Chunks o pedazos de código (R, Python o SQL)
 
-## Como funciona?
+##### Como funciona?
 
 ![](Resources/rmarkdownflow.png)
 
-## Crash Course de Markdown
-╭(◔ ◡ ◔)/.
+## Encabezado YAML (opcional)
+Es un encabezado (100% opcional) delimitado por tres guiones `---` donde especificamos el título, subtítulo, forma de output, autores y demás información global del documento. 
 
+```{r eval = FALSE}
+---
+title: "Tutorial de `Quarto`"
+subtitle: "Generación de reportes "
+author: "Pablo López Landeros"
+date: "`r Sys.Date()`"
+format: html
+editor: visual
+---
+```
+La lista completa de elementos que podemos cambiar en un `YAML` la encuentran en <https://quarto.org/docs/reference/formats/html.html>
+
+
+## Bloques de código
+Dentro de nuestra interfaz podemos tener pedazos de código en R, Python y SQL. 
+
+```{r}
+a <- 10
+b <- 5
+
+c <- a + b
+c
+
+```
+
+Además de poder generar un documento completo, podemos ver el resultado de los bloques aislados de código. Esto nos ahorra mucho tiempo ya que renderizar los documentos puede ser muy tardado. 
+
+::: callout-note
+Si presionamos `CTRL + ALT + i`, insertamos automáticamente un bloque de código de R :)
+:::
+
+![](Resources/inlineout.png)
+
+## Texto: Markdown
 Markdown es una forma de escribir contenido mediante **plaintext**. A diferencia de los procesadores tradicionales de texto, los archivos en Markdown tienen la ventaja de poder ser compartidos e interpretados fácilmente entre distintas sistemas operativos como macOS, Windows, Linux, iOS e incluso Android. 
+
+
+### Crash Course de Markdown
+╭(◔ ◡ ◔)/.
 
 La mejor guía-resumen de Markdown se encuentra [aquí](https://www.markdownguide.org/basic-syntax/).
 
@@ -65,7 +137,9 @@ Que se verá así:
 <br>
 
 
-## Como combinar código + Markdown?
+
+
+# Juntemos todo:
 
 Ya vimos la parte de la escritura. Ahora veamos como podemos combinar lo aprendido en la sección pasada con lo que vimos la semana pasada (`R`).
 
@@ -73,6 +147,15 @@ Para poder insertar (y correr) códigos de R dentro de nuestro documento de Quar
 
 ![](Resources/codigo.png)
 Entre los corchetes podemos poner múltiples comandos para modificar el comportamiento de nuestro código. Algunos de los más comunes serían:
+- `eval = FALSE` muestra el código pero no lo corre. Es decir puede tener errores.
+```{r eval = FALSE}
+# Este codigo marcaría error:
+library(gplot)
+
+# Este no:
+library(ggplot2)
+
+```
 
 - `include = FALSE` evita que el código y los resultados aparezcan en el archivo final aunque el código **sí se ejecuta** y los resultados pueden ser usados en otros pedazos de código.
 ```{r include=FALSE}
@@ -164,5 +247,9 @@ ggplot(diabetes)+
 
 ```
 
+¡Felicidades! Ya terminaste esta sección. Puedes ir a:
 
+-   [Reporte COVID](https://pablolopez2733.github.io/Quarto-Tutorial/Reporte1.html).
+
+- [Índice](https://pablolopez2733.github.io/Quarto-Tutorial/)
 

@@ -1,27 +1,133 @@
 ---
-title: "Reporte Vacunación"
+title: "Reporte Casos COVID en México"
 author: "Pablo López Landeros"
+backgroundcolor: "#eee9e5"
 format: html
 editor: visual
 ---
+Este es un reporte sencillo sobre los casos COVID en México. Los datos están en [nuestro dropbox](https://www.dropbox.com/sh/yd73542zaptsjti/AAByxnocfxM2FCoh7LjRg8Gwa/datos?dl=0&preview=casos_covid_agosto_2022.csv&subfolder_nav_tracking=1). 
 
-## Quarto
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+# message=FALSE, warning=FALSE
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+# Omitiremos las warnings porque no queremos ensuciar nuestro reporte. Notemos que instalaremos y usaremos dos librerías nuevas.
 
-## Running Code
+# Instalamos librerías
+#install.packages('kableExtra')
+#install.packages('scales')
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+# Importamos librerías
+library(tidyverse)
+library(kableExtra)
+library(scales)
 
-```{r}
-1 + 1
+# Leemos datos
+df <- read_csv('data/casos_covid_agosto_2022.csv')
 ```
 
-You can add options to executable code like this
+## Reporte casos últimos 10 días. 
 
-```{r}
-#| echo: false
-2 * 2
+```{r echo=FALSE}
+df %>% 
+  arrange(desc(FECHA_SINTOMAS)) %>% 
+  head(10) %>% 
+  kableExtra::kbl(col.names = c("Inicio de Síntomas","Conteo")) %>%
+  kableExtra::kable_styling()
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+## ¿Como fue la pandemia para los mexicanos?
+
+Reporte de casos reportados desde inicios de 2020 y hasta octubre de 2022.
+
+```{r echo=FALSE}
+ggplot(df, aes(x = FECHA_SINTOMAS, y = n))+
+  geom_line(color="red")+
+  labs(
+    title = 'Casos COVID en México',
+    subtitle = '2020 - 2022',
+    x = 'Casos',
+    y = 'Fecha inicio de síntomas'
+  ) +
+  theme_minimal()
+```
+::: callout-note
+Notemos aquí una ENORME ventaja de Quarto. Si este reporte lo quisiéramos actualizar semanal o mensualmente, bastaría con cambiar el nombre del archivo al inicio y podríamos generar todo un nuevo reporte con solo cambiar **una línea de código**. 
+:::
+
+
+# Reporte con código.
+
+Ahora supongamos que sí queremos mostrar nuestro código.
+
+## Importar paqueterías
+Usaremos dos librerías nuevas para poder generar tablas más estéticas en nuestros reportes. 
+```{r message=FALSE, warning=FALSE}
+# message=FALSE, warning=FALSE
+
+# Omitiremos las warnings porque no queremos ensuciar nuestro reporte. Notemos que instalaremos y usaremos dos librerías nuevas.
+
+# Instalamos librerías
+#install.packages('kableExtra')
+#install.packages('scales')
+
+# Importamos librerías
+library(tidyverse)
+library(kableExtra)
+library(scales)
+
+# Leemos datos
+df <- read_csv('data/casos_covid_agosto_2022.csv')
+head(df)
+```
+
+Se ve bien pero hay una mejor opción con la librería `kable`. 
+
+## Reporte casos últimos 10 días. 
+Generamos una tabla de los ultimos 10 días arreglando descendentemente por fecha de inicio de síntomas y después cambiamos los nombres de columnas.
+```{r}
+df %>% 
+  arrange(desc(FECHA_SINTOMAS)) %>% 
+  head(10) %>% 
+  kableExtra::kbl(col.names = c("Inicio de Síntomas","Conteo")) %>%
+  kableExtra::kable_styling()
+```
+
+## Gráfica
+Recordemos que con ggplot podemos generar nuestras gráficas. 
+
+
+```{r}
+ggplot(df, aes(x = FECHA_SINTOMAS, y = n))+
+  geom_line(color="#59d6ff")+
+  labs(
+    title = 'Casos COVID en México',
+    subtitle = '2020 - 2022',
+    x = 'Casos',
+    y = 'Fecha inicio de síntomas'
+  )+
+  theme_dark()
+```
+
+
+# Ejercicio 1
+
+Supongamos que eres la directora de salud de la UNICEF. Para un evento deberás preparar un reporte sobre la vacunación de HPV en distintos países del mundo.
+
+Utiliza el dataset `hpv_unicef.csv` que está en nuestro dropbox para generar un reporte que enviarás a los presidentes de cada país involucrado. Incluye cualquier información, tabla, gráfica que creas pertinetnte. El ejercicio es muy libre :)
+
+::: callout-note
+Recuerda que los presidentes (por lo general) no saben programar (como nosotros) así que no los espantes con códigos de R. Mantén tu reporte lo más sencillo posible.  
+:::
+
+
+[Link a los datos](https://www.dropbox.com/sh/yd73542zaptsjti/AAByxnocfxM2FCoh7LjRg8Gwa/datos?dl=0&preview=hpv_unicef.csv&subfolder_nav_tracking=1)
+
+# Ejercicio 2
+
+Mismo contexto del ejercicio anterior pero ahora generarás un reporte para estudiantes de  ingeniería biomédia que tienen contexto y conocimiento de programación. A ellos sí les interesa ver tus códigos y que sean reproducibles. 
+
+Genera el reporte pertinente.
+
+¡Felicidades! Terminaste el curso :D
+
+- [Índice](https://pablolopez2733.github.io/Quarto-Tutorial/)

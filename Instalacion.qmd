@@ -1,0 +1,60 @@
+---
+title: "Tutorial de`Quarto`"
+subtitle: "Generación de reportes "
+author: "Pablo López Landeros"
+date: "`r Sys.Date()`"
+abstract: "Mostramos como instalar Quarto."
+title-block-banner: false
+execute:
+  error: true
+  warning: false
+theme: lux  
+toc-title: "Contenido"
+author-title: "Autores"
+published-title: "Última actualización"
+abstract-title: "Resumen"
+backgroundcolor: "#eee9e5"
+format:
+    html: 
+      self-contained: true
+      theme: litera
+      toc: true
+      toc-location: left
+      toc-depth: 3
+      number-sections: true
+      number-depth: 3
+reference-location: margin
+citation-location: margin
+link-citations: yes
+editor: 
+  markdown: 
+    wrap: 80
+---
+
+## Paso 1
+Ir a <https://quarto.org/docs/get-started/>.
+
+## Paso 2
+Instalar Quarto.
+![](Resources/quartoins.png)
+
+## Paso 3
+Instalamos las paqueterías necesarias.
+```{r}
+install.packages('tidyverse')
+install.packages("quarto")
+install.packages('palmerpenguins')
+```
+
+
+## Paso 4
+Creamos y abrimos un proyecto nuevo en R. (Ya lo vimos en clases anteriores.)
+
+## Paso 5
+Creamos un nuevo documento Quarto.
+
+¡Felicidades! Ya terminaste esta sección. Puedes ir a:
+
+-   [Generación de Reportes](https://pablolopez2733.github.io/Quarto-Tutorial/Gcion_rep.html).
+
+- [Índice](https://pablolopez2733.github.io/Quarto-Tutorial/)

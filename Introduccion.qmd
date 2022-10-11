@@ -1,19 +1,48 @@
 ---
-title: "Generación de Reportes con Quarto"
+title: "Tutorial de `Quarto`"
+subtitle: "Introducción "
 author: "Pablo López Landeros"
-format: html
-editor: visual
+date: "`r Sys.Date()`"
+abstract: "Pequeña introducción a lo que es Quarto y como se verá."
+title-block-banner: false
+execute:
+  error: true
+  warning: false
+theme: lux  
+toc-title: "Contenido"
+author-title: "Autores"
+published-title: "Última actualización"
+abstract-title: "Resumen"
+backgroundcolor: "#eee9e5"
+format:
+    html: 
+      self-contained: true
+      theme: litera
+      toc: true
+      toc-location: left
+      toc-depth: 3
+      number-sections: true
+      number-depth: 3
+reference-location: margin
+citation-location: margin
+link-citations: yes
+editor: 
+  markdown: 
+    wrap: 80
 ---
+
 
 ![](Resources/quarto.png){fig-align="left"}
 
 ## ¿Qué es Quarto?
 Quarto es un documento que utiliza el "lenguaje" *Markdown* y nos permite combinar
 
-- Códigos en R, Python o Julia
+- Códigos en R, Python, SQL o Julia
 - Elementos gráficos (tablas, gráficas, resúmenes de modelos)
 - Texto y ecuaciones
-En un solo lugar.
+
+
+Para generar reportes escritos que sean **reproducibles, estéticos y ligeros**. 
 
 ## ¿Por qué usarlo? 
 - Nos ahorra los problemas de formato de los procesadores de texto clásicos.
@@ -27,3 +56,8 @@ La documentación completa está en: <https://quarto.org>.
 
 ![](Resources/nb.png)
 
+¡Felicidades! Ya terminaste esta sección. Puedes ir a:
+
+-   [Instalación de Quarto](https://pablolopez2733.github.io/Quarto-Tutorial/Instalacion.html).
+
+- [Índice](https://pablolopez2733.github.io/Quarto-Tutorial/)
