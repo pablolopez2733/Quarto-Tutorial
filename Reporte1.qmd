@@ -109,18 +109,19 @@ ggplot(df, aes(x = FECHA_SINTOMAS, y = n))+
 ```
 
 
-## Bonus: Reportes en Word
 
-Muchas organizaciones, particularmente dependencias de gobieron, requieren ciertos machotes para la entrega/presentación de documentos. Quarto tambien nos da opciones para esto. Como por ejemplo, el logo que notan en la esquina superior derecha de esta página.
+### Encabezados
+Si queremos incluir una imagen o marca en nuestros encabezados, podemos generarlo mediante el siguiente código:
 
-Esto se genera mediante este código:
 ```{r}
 htmltools::img(src = knitr::image_uri(file.path(getwd(),"Resources", "logo.png")), 
                alt = 'logo', 
                style = 'position:absolute; top:0; right:0; padding:10px; height:100px; width:300px')
 ```
+## Generación de reportes en Word
+Aunque hemos aprendido muchas nuevas herramientas, muchas organizaciones aún prefieren la entrega/presentación de documentos oficiales en **Microsoft Word**. Afortunadamente Quarto tambien nos da opciones para esto. 
 
-Aunque en estos momentos utilizamos documentos html, podemos generar **documentos en word**.
+Aunque hasta ahora hemos utilizado documentos html, podemos generar reportes como **documentos en word**. 
 
 Para esto, habría que agregar estas líneas en el `YAML` del archivo. 
 
@@ -131,6 +132,34 @@ format: docx
 ---
 ```
 
+
+### Plantillas de Word 
+
+Quarto nos da la opción de generar un reporte sobre una plantilla con un formato predeterminado en Word. Para poder lograrlo hay que seguir una serie de pasos:
+
+1. Agregar estas líneas al archivo YAML:
+
+```{r eval=FALSE}
+format:
+  docx:
+    reference-doc: custom-reference-doc.docx
+```
+
+2. Ejecutar el siguiente código en nuestra terminal: 
+```{bash eval=FALSE}
+$ quarto pandoc -o custom-reference-doc.docx \
+--print-default-data-file reference.docx
+```
+
+
+3. Esto nos generará el siguiente documento: `custom-reference-doc.docx` que funcionará como nuestro machote. Hay que abrirlo y modificarlo conforme queramos 
+![](Resources/machote.png)
+
+4. Lo guardamos y listo! Ahora si volvemos a nuestro reporte en Quarto y oprimimos `render`, generaremos el reporte con el estilo de la plantilla que trabajamos :D
+
+![](Resources/repfinal.png)
+
+La guía completa sobre pandoc y Word está en <https://quarto.org/docs/output-formats/ms-word-templates.html>.
 
 # Ejercicio 1
 

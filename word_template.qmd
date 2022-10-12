@@ -1,9 +1,13 @@
 ---
 title: "Reporte Covid México 2020-2022"
 author: "Pablo Landeros"
-format: docx
+format:
+  docx:
+    reference-doc: custom-reference-doc.docx
 editor: visual
 ---
+
+# Reporte COVID México 2020-2022
 
 Este es un reporte sencillo sobre los casos COVID en México. Los datos están en [nuestro dropbox](https://www.dropbox.com/sh/yd73542zaptsjti/AAByxnocfxM2FCoh7LjRg8Gwa/datos?dl=0&preview=casos_covid_agosto_2022.csv&subfolder_nav_tracking=1).
 

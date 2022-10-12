@@ -146,6 +146,11 @@ Ya vimos la parte de la escritura. Ahora veamos como podemos combinar lo aprendi
 Para poder insertar (y correr) códigos de R dentro de nuestro documento de Quarto, necesitamos encerrar nuestras líneas de código dentro de dos pares de \`\`\`.
 
 ![](Resources/codigo.png)
+::: callout-note
+Si esta forma de escribir parece intimidante, no te preocupes. Para esto, Quarto tiene el **editor visual**. El cual nos da una interfaz mucho más amable para trabajar.
+:::
+
+
 Entre los corchetes podemos poner múltiples comandos para modificar el comportamiento de nuestro código. Algunos de los más comunes serían:
 - `eval = FALSE` muestra el código pero no lo corre. Es decir puede tener errores.
 ```{r eval = FALSE}
@@ -247,9 +252,6 @@ ggplot(diabetes)+
 
 ```
 
-::: callout-note
-Si esta forma de escribir parece intimidante, no te preocupes. Para esto, Quarto tiene el **editor visual**. El cual nos da una interfaz mucho más amable para trabajar.
-:::
 
 
 
