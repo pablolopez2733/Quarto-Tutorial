@@ -109,6 +109,29 @@ ggplot(df, aes(x = FECHA_SINTOMAS, y = n))+
 ```
 
 
+## Bonus: Reportes en Word
+
+Muchas organizaciones, particularmente dependencias de gobieron, requieren ciertos machotes para la entrega/presentación de documentos. Quarto tambien nos da opciones para esto. Como por ejemplo, el logo que notan en la esquina superior derecha de esta página.
+
+Esto se genera mediante este código:
+```{r}
+htmltools::img(src = knitr::image_uri(file.path(getwd(),"Resources", "logo.png")), 
+               alt = 'logo', 
+               style = 'position:absolute; top:0; right:0; padding:10px; height:100px; width:300px')
+```
+
+Aunque en estos momentos utilizamos documentos html, podemos generar **documentos en word**.
+
+Para esto, habría que agregar estas líneas en el `YAML` del archivo. 
+
+```{r eval=FALSE}
+---
+title: "Título"
+format: docx
+---
+```
+
+
 # Ejercicio 1
 
 Supongamos que eres la directora de salud de la UNICEF. Para un evento deberás preparar un reporte sobre la vacunación de HPV en distintos países del mundo.

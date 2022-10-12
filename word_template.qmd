@@ -1,0 +1,63 @@
+---
+title: "Reporte Covid México 2020-2022"
+author: "Pablo Landeros"
+format: docx
+editor: visual
+---
+
+Este es un reporte sencillo sobre los casos COVID en México. Los datos están en [nuestro dropbox](https://www.dropbox.com/sh/yd73542zaptsjti/AAByxnocfxM2FCoh7LjRg8Gwa/datos?dl=0&preview=casos_covid_agosto_2022.csv&subfolder_nav_tracking=1).
+
+```{r message=FALSE, warning=FALSE, echo=FALSE}
+# Omitiremos las warnings porque no queremos ensuciar nuestro reporte. Notemos que instalaremos y usaremos dos librerías nuevas.
+
+# Instalamos librerías
+
+#install.packages('kableExtra')
+
+#install.packages('scales')
+
+# Importamos librerías
+
+library(tidyverse)
+
+library(kableExtra)
+
+library(scales)
+
+# Leemos datos
+
+df <- read_csv('data/casos_covid_agosto_2022.csv')
+
+```
+
+## Reporte casos últimos 10 días. 
+
+```{r}
+df %>% 
+  arrange(desc(FECHA_SINTOMAS)) %>% 
+  head(10)
+```
+
+## ¿Como fue la pandemia para los mexicanos?
+
+Reporte de casos reportados desde inicios de 2020 y hasta octubre de 2022.
+
+```{r}
+ggplot(df, aes(x = FECHA_SINTOMAS, y = n))+
+
+  geom_line(color="red")+
+
+  labs(
+
+    title = 'Casos COVID en México',
+
+    subtitle = '2020 - 2022',
+
+    x = 'Casos',
+
+    y = 'Fecha inicio de síntomas'
+
+  ) +
+
+  theme_minimal()
+```

@@ -40,7 +40,7 @@ Instalar Quarto.
 
 ## Paso 3
 Instalamos las paqueterías necesarias.
-```{r}
+```{r eval=FALSE}
 install.packages('tidyverse')
 install.packages("quarto")
 install.packages('palmerpenguins')

@@ -247,6 +247,13 @@ ggplot(diabetes)+
 
 ```
 
+::: callout-note
+Si esta forma de escribir parece intimidante, no te preocupes. Para esto, Quarto tiene el **editor visual**. El cual nos da una interfaz mucho más amable para trabajar.
+:::
+
+
+
+
 ¡Felicidades! Ya terminaste esta sección. Puedes ir a:
 
 -   [Reporte COVID](https://pablolopez2733.github.io/Quarto-Tutorial/Reporte1.html).
