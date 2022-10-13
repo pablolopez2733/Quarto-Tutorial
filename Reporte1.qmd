@@ -147,7 +147,7 @@ format:
 
 2. Ejecutar el siguiente código en nuestra terminal: 
 ```{bash eval=FALSE}
-$ quarto pandoc -o custom-reference-doc.docx \
+$ quarto.cmd pandoc -o custom-reference-doc.docx \
 --print-default-data-file reference.docx
 ```
 
